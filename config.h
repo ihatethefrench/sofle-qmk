@@ -1,6 +1,5 @@
 #pragma once
 
-#define MIDI_BASIC
 #define MIDI_ADVANCED
 #define AUTO_SHIFT_TIMEOUT 175
 
@@ -11,7 +10,6 @@
 
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
-
 
 /* The way how "handedness" is decided (which half is which),
 see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness

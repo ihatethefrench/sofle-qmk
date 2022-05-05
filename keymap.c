@@ -3,7 +3,7 @@
 enum sofle_layers {
     _WORKMAN,
     _QWERTY,
-		_MIDI,
+    _MIDI,
     _LOWER,
     _RAISE,
     _ADJUST
@@ -12,7 +12,7 @@ enum sofle_layers {
 enum custom_keycodes {
     KC_WORKMAN = SAFE_RANGE,
     KC_QWERTY,
-		KC_MIDI,
+    KC_MIDI,
     KC_LOWER,
     KC_RAISE,
     KC_ADJUST
@@ -80,11 +80,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_MIDI] = LAYOUT(
-	MI_ALLOFF, MI_OCT_0, MI_OCT_1,  MI_OCT_2,  MI_OCT_3,  MI_OCT_4,                       MI_OCT_5, MI_OCT_6, MI_OCT_7, _______, _______, MI_TOG,
-	SQ_TOG,    SQ_TMPD,  SQ_TMPU,   _______,   MI_Cs,     MI_Ds,                          _______,  MI_Fs,    MI_Gs,    MI_As,   _______, _______,
-	_______,   SQ_RES_2, SQ_RES_4,  MI_C,      MI_D,      MI_E,                           MI_F,     MI_G,     MI_A,     MI_B,    MI_C_1,  KC_WORKMAN,
-	_______,   SQ_RES_8, SQ_RES_16, SQ_RES_32, MI_TRNSD,  MI_TRNSU, _______,    _______,  MI_BENDD, MI_BENDU, _______,  _______, _______, _______,
-								  	   _______,   _______,   _______,   MI_SUS,   MI_OCTD,    MI_OCTU,  _______,  _______,  _______,  _______
+  MI_ALLOFF, MI_OCT_0, MI_OCT_1,  MI_OCT_2,  MI_OCT_3,  MI_OCT_4,                       MI_OCT_5, MI_OCT_6, MI_OCT_7, _______, _______, MI_TOG,
+  SQ_TOG,    SQ_TMPD,  SQ_TMPU,   _______,   MI_Cs,     MI_Ds,                          _______,  MI_Fs,    MI_Gs,    MI_As,   _______, _______,
+  _______,   SQ_RES_2, SQ_RES_4,  MI_C,      MI_D,      MI_E,                           MI_F,     MI_G,     MI_A,     MI_B,    MI_C_1,  KC_WORKMAN,
+  _______,   SQ_RES_8, SQ_RES_16, SQ_RES_32, MI_TRNSD,  MI_TRNSU, _______,    _______,  MI_BENDD, MI_BENDU, _______,  _______, _______, _______,
+                       _______,   _______,   _______,   MI_SUS,   MI_OCTD,    MI_OCTU,  _______,  _______,  _______,  _______
 ),
 
 /* LOWER
@@ -146,11 +146,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_ADJUST] = LAYOUT(
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-	RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_QWERTY,
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_WORKMAN,
-	XXXXXXX, XXXXXXX, XXXXXXX, KC_MIDI, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-										_______, _______, _______, _______, _______,    _______, _______, _______, _______, _______
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_QWERTY,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_WORKMAN,
+  XXXXXXX, XXXXXXX, XXXXXXX, KC_MIDI, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                    _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______
 )};
 
 #ifdef OLED_ENABLE
@@ -197,10 +197,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 set_single_persistent_default_layer(_WORKMAN);
             }
             return false;
-				case KC_MIDI:
-						if (record->event.pressed) {
-						    set_single_persistent_default_layer(_MIDI);
-						}
+        case KC_MIDI:
+            if (record->event.pressed) {
+              set_single_persistent_default_layer(_MIDI);
+            }
 						return false;
         case KC_LOWER:
             if (record->event.pressed) {
