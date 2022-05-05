@@ -1,7 +1,7 @@
 #pragma once
 
 #define MIDI_ADVANCED
-#define AUTO_SHIFT_TIMEOUT 175
+#define AUTO_SHIFT_TIMEOUT 150
 
 #define LAYER_STATE_8BIT
 #define NO_ACTION_ONESHOT
